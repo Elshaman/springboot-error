@@ -2,6 +2,7 @@ package com.shaman.springboot.error.springbooterror.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public User findUserById(Long Id) {
+    public Optional<User> findUserById(Long Id) {
         User user = null;
         for (User u : users){
                 if(u.getId().equals(Id)){   
@@ -31,7 +32,7 @@ public class UserServiceImplementation implements UserService {
                 }
         }
 
-        return user;
+        return Optional.ofNullable(null);
     }
 
     @Override
